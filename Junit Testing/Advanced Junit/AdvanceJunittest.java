@@ -12,17 +12,8 @@ different inputs.
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.platform.suite.api.Suite;
-import org.junit.platform.suite.api.SelectClasses;
-import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTimeout;
 
 public class EvenCheckerTest {
     @ParameterizedTest
@@ -45,6 +36,9 @@ Steps:
 3. Use JUnit's `@Suite` and `@SelectClasses` annotations.
 
 ---------------------<--------------------------->------------------------
+import org.junit.platform.suite.api.Suite;
+import org.junit.platform.suite.api.SelectClasses;
+
 @Suite
 @SelectClasses({EvenCheckerTest.class, OrderedTests.class, ExceptionThrowerTest.class, PerformanceTesterTest.class})
 class AllTests {
@@ -60,6 +54,12 @@ Steps:
 2. Use JUnit's `@TestMethodOrder` and `@Order` annotations.
 
 ---------------------<--------------------------->------------------------
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class OrderedTests {
 
@@ -92,6 +92,9 @@ Steps:
 exception.
 
 ---------------------<--------------------------->------------------------
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 class ExceptionThrowerTest {
 
     @Test
@@ -112,6 +115,10 @@ Steps:
 2. Write a test class `PerformanceTesterTest` that tests the method for timeout.
 
 ---------------------<--------------------------->------------------------
+import org.junit.jupiter.api.Test;
+import java.time.Duration;
+import static org.junit.jupiter.api.Assertions.assertTimeout;
+
 class PerformanceTesterTest {
 
     @Test
