@@ -20,9 +20,9 @@ public class EvenCheckerTest {
 
 
     void testEvenChecker(int  number){
-        EvenChecker even = new EvenChecker();
+        EvenChecker checker = new EvenChecker();
 
-        assertTrue(even.isEven(number));
+        assertTrue(checker.isEven(number));
     }
 }
 ------------------<-------------------------->--------------------------
