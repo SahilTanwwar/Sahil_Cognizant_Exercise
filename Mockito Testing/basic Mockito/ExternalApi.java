@@ -28,3 +28,20 @@ public class ExternalApi {
     }
 }
 
+
+
+
+public class ExternalApi {
+
+    public void connect() {
+        System.out.println("Connected");
+    }
+
+    public String getData() {
+        return "Real Data";
+    }
+
+    public void disconnect() {
+        System.out.println("Disconnected");
+    }
+}
