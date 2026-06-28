@@ -107,3 +107,40 @@ public class ArguementVerify {
 
 
 }
+
+
+
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
+
+public class ArguementVerify {
+
+    @Test
+    void testArguement(){
+        ExternalApi mockapi = mock(ExternalApi.class);
+
+       when(mockapi.getData())
+               .thenReturn("First Call")
+               .thenReturn("Second Call")
+               .thenReturn("Third Call");
+
+        MyService service = new MyService(mockapi);
+
+       String first =  service.fetchUser();
+       String second = service.fetchUser();
+       String third = service.fetchUser();
+
+
+        assertEquals("First Call", first);
+        assertEquals("Second Call", second);
+        assertEquals("Third Call", third);
+
+        verify(mockapi, times(3)).getData();
+    }
+
+
+}
+
