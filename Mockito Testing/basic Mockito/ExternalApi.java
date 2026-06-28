@@ -19,3 +19,12 @@ public class ExternalApi {
         System.out.println("Real User....");
     }
 }
+
+
+
+public class ExternalApi {
+    public String getData(){
+        return "Real data";
+    }
+}
+
