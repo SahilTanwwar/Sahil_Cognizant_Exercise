@@ -23,3 +23,18 @@ public class MyService {
         return  api.getUser(id);
     }
 }
+
+
+
+public class MyService {
+
+    ExternalApi api;
+    public MyService(ExternalApi api){
+        this.api = api;
+    }
+
+    public void fetchUser(){
+         api.getUser();
+    }
+}
+
