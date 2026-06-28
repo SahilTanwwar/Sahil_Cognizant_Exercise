@@ -144,3 +144,37 @@ public class ArguementVerify {
 
 }
 
+
+
+
+
+
+import org.junit.jupiter.api.Test;
+import org.mockito.InOrder;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
+
+public class ArguementVerify {
+
+    @Test
+    void testInteractionOrder() {
+
+        ExternalApi mockApi = mock(ExternalApi.class);
+
+        when(mockApi.getData()).thenReturn("Mock Data");
+
+        MyService service = new MyService(mockApi);
+
+        service.fetchData();
+
+        InOrder inOrder = inOrder(mockApi);
+
+        inOrder.verify(mockApi).connect();
+        inOrder.verify(mockApi).getData();
+        inOrder.verify(mockApi).disconnect();
+    }
+    }
+
+
+
