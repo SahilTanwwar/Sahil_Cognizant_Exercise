@@ -82,3 +82,28 @@ public class ArguementVerify {
 
 }
 -------------------------------------<----------------------------------->------------------
+
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
+
+public class ArguementVerify {
+
+    @Test
+    void testArguement(){
+        ExternalApi mockapi = mock(ExternalApi.class);
+
+       doNothing().when(mockapi).getUser();
+
+        MyService service = new MyService(mockapi);
+
+        service.fetchUser();
+
+
+        verify(mockapi).getUser();
+    }
+
+
+}
