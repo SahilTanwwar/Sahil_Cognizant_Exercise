@@ -9,3 +9,17 @@ public class MyService {
         return api.getData();
     }
 }
+
+
+// Exercise 3 ------------------->
+public class MyService {
+
+    ExternalApi api;
+    public MyService(ExternalApi api){
+        this.api = api;
+    }
+
+    public String fetchUser(int id){
+        return  api.getUser(id);
+    }
+}
