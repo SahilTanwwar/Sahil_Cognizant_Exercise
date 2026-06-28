@@ -38,3 +38,19 @@ public class MyService {
     }
 }
 
+
+
+
+
+public class MyService {
+
+    ExternalApi api;
+    public MyService(ExternalApi api){
+        this.api = api;
+    }
+
+    public String fetchUser(){
+      return    api.getData();
+    }
+}
+
