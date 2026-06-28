@@ -53,3 +53,32 @@ public class MyServiceVerifyTest {
 
 
 }
+
+----------------------------------------<-------------------------->--------------------
+// Exercise 3 ----->
+
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
+
+public class ArguementVerify {
+
+    @Test
+    void testArguement(){
+        ExternalApi mockapi = mock(ExternalApi.class);
+
+        when(mockapi.getUser(101)).thenReturn("Sahil");
+
+        MyService service = new MyService(mockapi);
+
+        String result = service.fetchUser(101);
+
+        assertEquals("Sahil" ,result);
+
+        verify(mockapi).getUser(101);
+    }
+
+
+}
+-------------------------------------<----------------------------------->------------------
