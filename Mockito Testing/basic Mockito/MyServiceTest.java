@@ -1,29 +1,55 @@
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
-import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.when;
+// Exercise1------------>
 
-@RunWith(MockitoJUnitRunner.class)
+import org.junit.jupiter.api.Test;
+
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
+
+
 public class MyServiceTest {
 
-    @Mock
-    private ExternalApi api;
+    @Test
+    void testExternalapi(){
+         ExternalApi mockapi = mock(ExternalApi.class);
 
-    @InjectMocks
-    private MyService myService;
+         when(mockapi.getData()).thenReturn("Mock Data");
+
+         MyService  service = new MyService(mockapi);
+
+         String result = service.fetchData();
+
+         assertEquals("Mock Data" , result);
+    }
+
+}
+
+----------------------------<------------------------------------------>---------------------
+    // Exercise-2--------->
+
+    import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.*;
+
+
+
+
+public class MyServiceVerifyTest {
 
     @Test
-    public void testFetchData() {
-        // Arrange - Mock the behavior of ExternalApi
-        when(api.getData()).thenReturn("Mocked Data");
+    void  verifyTest(){
 
-        // Act - Call the method under test
-        String result = myService.fetchData();
+        ExternalApi mockapi=  mock(ExternalApi.class);
 
-        // Assert - Verify the result
-        assertEquals("Mocked Data", result);
+        when(mockapi.getData()).thenReturn("mock Data");
+
+        MyService  service = new MyService(mockapi);
+        
+        service.fetchData();
+        
+        verify(mockapi).getData();
     }
+
+
 }
