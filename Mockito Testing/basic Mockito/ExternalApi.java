@@ -13,3 +13,9 @@ public class ExternalApi {
     }
 }
 -------------------------<------------------------>----------
+
+    public class ExternalApi {
+    public void getUser(){
+        System.out.println("Real User....");
+    }
+}
