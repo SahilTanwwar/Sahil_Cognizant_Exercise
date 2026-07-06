@@ -1,3 +1,8 @@
+//Exercise 1: Inventory Management System
+Scenario: 
+You are developing an inventory management system for a warehouse. Efficient data storage and retrieval are crucial.
+
+
 public class Product {
     private int productId;
     private String productName;
