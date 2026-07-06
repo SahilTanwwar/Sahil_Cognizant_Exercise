@@ -1,3 +1,8 @@
+// Exercise 2: E-commerce Platform Search Function
+Scenario: 
+You are working on the search functionality of an e-commerce platform. The search needs to be optimized for fast performance.
+
+
 public class Product {
 
     private int productId;
