@@ -1,4 +1,0 @@
-@Repository
-public interface LoanRepository
-        extends JpaRepository<Loan,Integer>{
-}
