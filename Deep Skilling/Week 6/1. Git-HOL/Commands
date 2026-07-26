@@ -1,0 +1,90 @@
+=============================
+Git Exercise - Cognizant
+=============================
+
+Step 1: Setup Git Configuration
+
+1. Check Git Version
+git --version
+
+2. Configure Username
+git config --global user.name "Sahil Tanwar"
+
+3. Configure Email
+git config --global user.email "your_email@gmail.com"
+
+4. Verify Configuration
+git config --global --list
+
+
+=============================
+Step 2: Configure Notepad
+=============================
+
+1. Check Notepad++
+notepad++
+
+2. Open .bashrc
+notepad++ ~/.bashrc
+
+3. Add Alias
+alias np='notepad++'
+
+4. Reload Bash
+source ~/.bashrc
+
+5. Open Notepad++ using Alias
+np
+
+6. Set Notepad++ as Default Editor
+git config --global core.editor "notepad++"
+
+7. Verify Default Editor
+git config --global -e
+
+
+=============================
+Step 3: Add File to Repository
+=============================
+
+1. Create Project Folder
+mkdir GitDemo
+
+2. Move into Project
+cd GitDemo
+
+3. Initialize Git
+git init
+
+4. View Hidden Files
+ls -la
+
+5. Create File
+echo "Welcome to Git" > welcome.txt
+
+6. Check File
+ls
+
+7. View File Content
+cat welcome.txt
+
+8. Check Git Status
+git status
+
+9. Add File
+git add welcome.txt
+
+10. Commit File
+git commit
+
+11. Check Status
+git status
+
+12. Add Remote Repository
+git remote add origin https://gitlab.com/username/GitDemo.git
+
+13. Pull Repository
+git pull origin master
+
+14. Push Repository
+git push origin master
