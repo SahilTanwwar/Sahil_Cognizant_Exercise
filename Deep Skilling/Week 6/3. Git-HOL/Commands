@@ -1,0 +1,90 @@
+=============================
+Git Branching and Merging Exercise
+=============================
+
+Step 1: Open Existing Repository
+
+cd GitDemo
+
+
+=============================
+Branching
+=============================
+
+1. Create a New Branch
+
+git branch GitNewBranch
+
+
+2. List All Local Branches
+
+git branch
+
+
+3. List All Local and Remote Branches
+
+git branch -a
+
+
+4. Switch to New Branch
+
+git checkout GitNewBranch
+
+
+5. Create a New File
+
+echo "This is a new branch file" > branch.txt
+
+
+6. Add File to Staging Area
+
+git add branch.txt
+
+
+7. Commit Changes
+
+git commit -m "Added branch.txt in GitNewBranch"
+
+
+8. Check Repository Status
+
+git status
+
+
+=============================
+Merging
+=============================
+
+1. Switch to Master Branch
+
+git checkout master
+
+
+2. Compare Master and Branch
+
+git diff master GitNewBranch
+
+
+3. View Visual Difference Using P4Merge
+
+git difftool master GitNewBranch
+
+
+4. Merge Branch into Master
+
+git merge GitNewBranch
+
+
+5. View Commit History
+
+git log --oneline --graph --decorate
+
+
+6. Delete the Merged Branch
+
+git branch -d GitNewBranch
+
+
+7. Verify Repository Status
+
+git status
