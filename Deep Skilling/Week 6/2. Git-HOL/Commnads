@@ -1,0 +1,73 @@
+=============================
+Git Ignore Exercise
+=============================
+
+Step 1: Open Existing Git Repository
+
+cd GitDemo
+
+
+=============================
+Step 2: Create Log File
+=============================
+
+echo "Sample Log File" > sample.log
+
+
+=============================
+Step 3: Create Log Folder
+=============================
+
+mkdir log
+
+echo "Log Data" > log/log1.txt
+
+
+=============================
+Step 4: Create .gitignore File
+=============================
+
+notepad .gitignore
+
+
+=============================
+Step 5: Add Entries to .gitignore
+=============================
+
+*.log
+log/
+
+
+=============================
+Step 6: Verify Git Status
+=============================
+
+git status
+
+
+=============================
+Step 7: Add Remaining Files
+=============================
+
+git add .
+
+
+=============================
+Step 8: Commit Changes
+=============================
+
+git commit -m "Added .gitignore file"
+
+
+=============================
+Step 9: Verify Working Directory
+=============================
+
+git status
+
+
+=============================
+Step 10: Push Changes
+=============================
+
+git push origin master
