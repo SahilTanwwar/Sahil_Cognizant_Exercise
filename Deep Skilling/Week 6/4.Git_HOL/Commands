@@ -1,0 +1,105 @@
+=============================
+Git Merge Conflict Resolution Exercise
+=============================
+
+Step 1: Verify Master is Clean
+
+git checkout master
+git status
+
+
+=============================
+Step 2: Create New Branch
+=============================
+
+git branch GitWork
+git checkout GitWork
+
+
+=============================
+Step 3: Create hello.xml
+=============================
+
+echo "<message>Hello from GitWork Branch</message>" > hello.xml
+
+git status
+
+
+=============================
+Step 4: Commit Changes
+=============================
+
+git add hello.xml
+
+git commit -m "Added hello.xml in GitWork branch"
+
+
+=============================
+Step 5: Switch to Master
+=============================
+
+git checkout master
+
+
+=============================
+Step 6: Create hello.xml with Different Content
+=============================
+
+echo "<message>Hello from Master Branch</message>" > hello.xml
+
+git add hello.xml
+
+git commit -m "Added hello.xml in master branch"
+
+
+=============================
+Step 7: View Commit History
+=============================
+
+git log --oneline --graph --decorate --all
+
+
+=============================
+Step 8: Compare Differences
+=============================
+
+git diff master GitWork
+
+
+=============================
+Step 9: Visual Compare Using P4Merge
+=============================
+
+git difftool master GitWork
+
+
+=============================
+Step 10: Merge Branch into Master
+=============================
+
+git merge GitWork
+
+
+=============================
+Step 11: Resolve Merge Conflict
+=============================
+
+git mergetool
+
+git add hello.xml
+
+git commit -m "Resolved merge conflict"
+
+
+=============================
+Step 12: Check Status
+=============================
+
+git status
+
+
+=============================
+Step 13: Add Backup File to .gitignore
+=============================
+
+notepad .gitignore
